@@ -1,0 +1,36 @@
+* {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.escena {
+  transform: scale(min(1, calc(100vw / 650)));
+}
+
+.happy-birthday {
+  top: -100%;
+  left: 120px;
+}
+
+.carta {
+  animation: none;
+  transform: scale(0.8);
+  transform-origin: center center;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 400px) {
+  .happy-birthday {
+    font-size: 36px;
+    top: -100%;
+    left: 130px;
+  }
+
+  .carta {
+    transform: scale(0.7);
+  }
+}
