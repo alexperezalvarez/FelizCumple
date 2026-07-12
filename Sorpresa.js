@@ -19,17 +19,23 @@ modalCarta.addEventListener("click", () => {
 const overlay = document.querySelector(".overlay");
 const soplido = document.getElementById("soplido");
 const cancion = document.getElementById("cancion");
-const llama = document.querySelector(".llama");
+const llamas = document.querySelectorAll(".llama");
+const velasContainer = document.querySelector(".velas");
 
-llama.addEventListener("click", () => {
+const celebrar = () => {
   soplido.currentTime = 0;
   soplido.play();
 
-  llama.style.animation = "apagar 0.5s forwards"; // forwards -> Ultimo frame (to)
+  llamas.forEach((l) => {
+    l.style.animation = "apagar 0.5s forwards";
+  });
 
   setTimeout(() => {
+    velasContainer.classList.add("visible");
     cancion.currentTime = 0;
     cancion.play();
     overlay.classList.add("hidden");
   }, 1000);
-});
+};
+
+llamas.forEach((l) => l.addEventListener("click", celebrar));
